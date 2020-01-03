@@ -15,20 +15,16 @@ const withLoader = (WrappedComponent, axios) => {
 
     axios.interceptors.request.use(request => {
       this.setState({loading: true});
-      // document.body.classList.add('custom-loader');
       return request;
     }, error => {
-      // document.body.classList.remove('custom-loader');
       this.setState({loading: false});
       throw error;
     });
 
     this.state.interceptorId = axios.interceptors.response.use(response => {
       this.setState({loading: false});
-      // document.body.classList.remove('custom-loader');
       return response;
     }, error => {
-      // document.body.classList.remove('custom-loader');
       this.setState({loading: false});
       throw error;
     });
