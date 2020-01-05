@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from 'react';
 import Backdrop from '../components/UI/Backdrop/Backdrop';
-import './withLoader.css';
 
 const withLoader = (WrappedComponent, axios) => {
   return class WithError extends Component {
@@ -37,7 +36,6 @@ const withLoader = (WrappedComponent, axios) => {
     render() {
       return (
         <Fragment>
-          <div className='description'>All Subscription</div>
           <WrappedComponent {...this.props} />
           <Backdrop show={this.state.loading} />
         </Fragment>

@@ -5,13 +5,13 @@ import Notes from './containers/Notes/Notes';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Container>
-        <Switch>
-          <Route path="/" exact component={Notes}/>
-        </Switch>
-      </Container>
-    </BrowserRouter>
+      <BrowserRouter>
+        <Container>
+          <Switch>
+            <Route path="/" exact component={Notes}/>
+          </Switch>
+        </Container>
+      </BrowserRouter>
   )
 }
   

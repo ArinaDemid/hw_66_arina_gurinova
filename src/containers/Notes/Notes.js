@@ -1,7 +1,8 @@
-import React, {Component} from "react";
+import React, {Component, Fragment} from "react";
 import axios from '../../axios-api';
 import Note from '../../components/Note/Note';
 import withLoader from '../../hoc/withLoader';
+import './Notes.css';
 
 class Notes extends Component {
   
@@ -27,15 +28,20 @@ class Notes extends Component {
     if (state) {
       notes = (
         Object.keys(state).map(id => (
-          <div className='Note' key={id}>
-            <Note
-              text={state[id].text}
-            />
-          </div>
+            <div className='Note' key={id}>
+              <Note
+                text={state[id].text}
+              />
+            </div>
         ))
       ) 
     } 
-    return notes;
+    return (
+      <Fragment>
+        <div className='notesDescription'>All Subscription</div>
+        {notes}
+      </Fragment>
+    )
   }
 };
 
